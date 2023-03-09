@@ -1,16 +1,16 @@
-
 const date = new Date();
 const ampm = date.getHours() >= 12 ? 'pm' : 'am';
 const hour = date.getHours();
 
-
 // greeting user
 const greetingUser = document.querySelector('.greeting-user');
 
-if (hour < 12 && ampm === 'am') {
+if (hour >= 4 && hour <= 12 && ampm === 'am') {
     greetingUser.innerHTML = 'Good Morning ,';
-} else if (hour > 18 && ampm === 'pm') {
+} else if (hour >= 13 && hour <= 18 && ampm === 'pm') {
     greetingUser.innerHTML = 'Good Evening ,';
+} else if (hour >= 00 && hour <= 04 && ampm === 'am') {
+    greetingUser.innerHTML = 'Good Night Take A Rest or';
 } else {
     greetingUser.textContent = 'Good Afternoon ,';
 }
@@ -50,8 +50,7 @@ var dateInput = document.querySelector(".input-date");
 dateInput.setAttribute("min", currentDate);
 
 
-// category section 
-
+// category section (active category)
 const work = document.getElementById('work');
 const personal = document.getElementById('personal');
 const shopping = document.getElementById('shopping');
@@ -106,8 +105,7 @@ others.addEventListener('click', () => {
 );
 
 
-
-// category section
+// category section (show list)
 const workCategory = document.getElementsByClassName('work-category');
 const personalCategory = document.getElementsByClassName('personal-category');
 const shoppingCategory = document.getElementsByClassName('shopping-category');
@@ -141,7 +139,7 @@ document.body.addEventListener('click', (e) => {
 });
 
 
-// details list section
+// show list detials
 const leftSideSection = document.getElementsByClassName('left-side-section');
 const lisitButtomSection = document.getElementsByClassName('list-buttom-section');
 

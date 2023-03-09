@@ -385,6 +385,32 @@ li:hover {
     display: flex;
 }
 
+.info-heading {
+    margin: 0;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.info {
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+.total-task-line {
+    font-size: 1.5rem;
+    color: #1d7b92;
+}
+
+.completed-task-line {
+    font-size: 1.5rem;
+    color: #32ba7c;
+}
+
+.pending-task-line {
+    font-size: 1.5rem;
+    color: red;
+}
+
 .inner-left-side{
     display: flex;
     justify-content: center;
@@ -446,13 +472,28 @@ li:hover {
     display: none;
 }
 
-
-
 .category-section h5 {
     margin: 0;
 }
 
+.display-task {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
 
+.display-des {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 5px 0px;
+}
+
+.right-side div {
+    font-size: 1rem;
+}
+
+.display-currentdate {
+    font-size: 0.8rem;
+}
 
 /* form */
 
@@ -810,31 +851,8 @@ li:hover {
     border-bottom: #181a1b 3px solid;
 }
 
-.info-heading {
-    margin: 0;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-}
 
-.info {
-    margin: 5px 0px;
-    font-size: 1.5rem;
-}
-
-.total-task-line {
-    font-size: 1.5rem;
-    color: #1d7b92;
-}
-
-.completed-task-line {
-    font-size: 1.5rem;
-    color: #32ba7c;
-}
-
-.pending-task-line {
-    font-size: 1.5rem;
-    color: red;
-}
+/* footer section */
 
 footer {
     width: 100%;
@@ -850,6 +868,7 @@ footer {
 
 footer span {
     font-size: 0.7rem;
+    font-weight: 600;
     color: #cfd1d0;
     letter-spacing: 1px;
     padding: 10px;

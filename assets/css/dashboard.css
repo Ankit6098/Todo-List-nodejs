@@ -865,6 +865,7 @@ footer {
 
 footer span {
     font-size: 0.7rem;
+    font-weight: 600;
     color: #cfd1d0;
     letter-spacing: 1px;
     padding: 10px;

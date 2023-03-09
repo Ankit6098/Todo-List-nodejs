@@ -445,12 +445,28 @@ li:hover {
     display: none;
 }
 
-
-
 .category-section h5 {
     margin: 0;
 }
 
+.display-task {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.display-des {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 5px 0px;
+}
+
+.right-side div {
+    font-size: 1rem;
+}
+
+.display-currentdate {
+    font-size: 0.8rem;
+}
 
 
 /* form */
@@ -849,6 +865,7 @@ footer {
 
 footer span {
     font-size: 0.7rem;
+    font-weight: 600;
     color: #cfd1d0;
     letter-spacing: 1px;
     padding: 10px;
