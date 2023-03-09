@@ -134,11 +134,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
+                                                <% if (i.categoryChoosed == "work" && i.completed == true) { %>
+                                                    <div class="complete-task-section">
+                                                        <a href="/complete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } else { %>
+                                                    <div class="delete-task-section">
+                                                        <a href="/delete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } %>
                                             </div>
                                             <div class="list-buttom-section">
                                                 <div class="left-buttom-side-section">
@@ -151,7 +159,6 @@
                                                                 <%= i.currentDate %>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                     <div class="right-side">
                                                         <div>
@@ -159,11 +166,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="delete-task-section">
+                                                <!-- <div class="delete-task-section">
                                                     <a href="/delete-task/?id=<%= i._id %>"><img
                                                             src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
                                                             alt=""></a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </li>
                                         <% } %>
@@ -200,11 +207,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
+                                                <% if (i.categoryChoosed == "work" && i.completed == true) { %>
+                                                    <div class="complete-task-section">
+                                                        <a href="/complete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } else { %>
+                                                    <div class="delete-task-section">
+                                                        <a href="/delete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } %>
                                             </div>
                                             <div class="list-buttom-section">
                                                 <div class="left-buttom-side-section">
@@ -225,11 +240,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="delete-task-section">
+                                                <!-- <div class="delete-task-section">
                                                     <a href="/delete-task/?id=<%= i._id %>"><img
                                                             src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
                                                             alt=""></a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </li>
                                         <% } %>
@@ -266,11 +281,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
+                                                <% if (i.categoryChoosed == "work" && i.completed == true) { %>
+                                                    <div class="complete-task-section">
+                                                        <a href="/complete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } else { %>
+                                                    <div class="delete-task-section">
+                                                        <a href="/delete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } %>
                                             </div>
                                             <div class="list-buttom-section">
                                                 <div class="left-buttom-side-section">
@@ -291,11 +314,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="delete-task-section">
+                                                <!-- <div class="delete-task-section">
                                                     <a href="/delete-task/?id=<%= i._id %>"><img
                                                             src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
                                                             alt=""></a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </li>
                                         <% } %>
@@ -332,11 +355,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
+                                                <% if (i.categoryChoosed == "work" && i.completed == true) { %>
+                                                    <div class="complete-task-section">
+                                                        <a href="/complete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } else { %>
+                                                    <div class="delete-task-section">
+                                                        <a href="/delete-task/?id=<%= i._id %>"><img
+                                                                src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                alt=""></a>
+                                                    </div>
+                                                <% } %>
                                             </div>
                                             <div class="list-buttom-section">
                                                 <div class="left-buttom-side-section">
@@ -357,11 +388,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="delete-task-section">
+                                                <!-- <div class="delete-task-section">
                                                     <a href="/delete-task/?id=<%= i._id %>"><img
                                                             src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
                                                             alt=""></a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </li>
                                     <% } %>

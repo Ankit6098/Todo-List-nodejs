@@ -58,7 +58,7 @@ app.post('/addtask', function(req,res){
     })
     .then(newTask => {
         console.log("Successfully Created Task!", newTask);
-        res.redirect('/dashboard');
+        res.redirect('back');
     })
     .catch(err => {
         console.log("Error Creating Task!!", err);
@@ -73,7 +73,7 @@ app.get('/complete-task', function(req,res){
     Dashboard.findByIdAndUpdate(id, {completed: true})
     .then(newTask => {
         console.log("Successfully Complated Task!", newTask);
-        res.redirect('/dashboard');
+        res.redirect('back');
     })
     .catch(err => {
         console.log("Error Complating Task!!", err);
@@ -88,7 +88,7 @@ app.get('/delete-task', function(req,res){
     Dashboard.findByIdAndDelete(id)
     .then(newTask => {
         console.log("Successfully Deleted Task!", newTask);
-        res.redirect('/dashboard');
+        res.redirect('back');
     })
     .catch(err => {
         console.log("Error Deleting Task!!", err);
