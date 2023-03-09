@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Poppins&family=Roboto&family=Roboto+Slab&family=Sofia+Sans:ital,wght@0,100;0,200;0,400;1,300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #181a1b;
+    overflow: hidden;
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.nav-logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 35px;
+    height: 35px;
+}
+
+.nav-logo-name {
+    margin-left: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.login-signup-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.nav-login {
+    transition: all 0.5s ease;
+}
+
+.nav-login:hover {
+    color: #2396b3;
+}
+
+.nav-register {
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 5px 18px ;
+    margin-left: 10px;
+    transition: all 0.5s ease;
+}
+
+.nav-register:hover {
+    background-color: #2396b3;
+    border: 1px solid #2396b3;
+}
+
+/* main container */
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.main-heading {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.about {
+    width: 15vw;
+    margin-bottom: 20px;
+}
+
+.main-container p {
+    font-size: 0.9rem;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.para-first-word {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.para-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+         
+.get-start {
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  54%, #1A2980  100%);
+    margin: 10px;
+    padding: 15px 35px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+  }
+
+.get-start:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+ 
+
+.learn-more {
+    padding: 15px 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+    background-color: #262829;
+    border: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: white;
+}
+
+.learn-more-container {
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    width: 40vw;
+    height: auto;
+    background-color: #2b2b2c;
+    padding: 20px 40px;
+    text-align: justify;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.learn-more-container p {
+    margin: 10px;
+}
+
+.close-button {
+    position: absolute;
+    right: 3.5%;
+    width: 14px;
+    height: 15px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+
+.para1 {
+    margin-top: 30px !important;
+}
+
+
+.element1 {
+    position: absolute;
+    top: 24%;
+    left: 15%;
+    width: 500px;
+    height: 550px;
+    background-image: linear-gradient(120deg, #26bfc6 -10%, #1b3887 100%);
+    border-radius: 40% 60% 63% 37% / 36% 39% 61% 64% ;
+    transform: rotate(-40deg);
+    transition: all 0.5s ease;
+}
+
+.element2 {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(120deg, #a4037e 0%, #491687 100%);
+    border-radius: 50%;
+    transform: rotate(-20deg);
+    transition: all 0.5s ease;
+}
+
+.element3 {
+    position: absolute;
+    top: 78%;
+    left: 55%;
+    width: 500px;
+    height: 500px;
+    background-image: linear-gradient(120deg, #a4037e 0%, #491687 100%);
+    border-radius: 40% 60% 63% 37% / 36% 39% 61% 64% ;;
+    transform: rotate(-50deg);
+    transition: all 0.5s ease;
+}

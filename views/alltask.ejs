@@ -1,0 +1,468 @@
+<html>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/alltask.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/9802/9802618.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="nav">
+            <div class="nav-logo-section">
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/9802/9802618.png" alt=""
+                        class="nav-logo"></a>
+                <a href=""><span class="nav-logo-name">Todos.</span></a>
+            </div>
+            <div class="login-signup-section">
+                <!-- <a href="/login" class="nav-login">Login</a>
+                <a href="/register" class="nav-register">Sign Up</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="leftside-nav">
+            <div class="nav-heading">
+                <h5>collection</h5>
+            </div>
+            <ul type="none" class="leftside-nav-ul">
+                <a href="./dashboard">
+                    <li>Pending Tasks</li>
+                </a>
+                <a href="./completedtask">
+                    <li>Completed Tasks</li>
+                </a>
+                <a href="./alltask">
+                    <li class="page-link">All Tasks</li>
+                </a>
+            </ul>
+        </div>
+        <div class="main-section">
+            <div class="page-info">
+                <h5>Dashboard</h5>
+            </div>
+            <div class="upper-section">
+                <div class="greeting-user-section">
+                    <h2 class="greeting-user">--------</h2>
+                    <div>
+                        Here Your All Tasks
+                    </div>
+                </div>
+            </div>
+            <div class="task-info">
+                <div>
+                    <h5>All Tasks</h5>
+                </div>
+                <div class="add-task-button-section">
+                    <button class="add-task-button">Add New Taks</button>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <% let totalWork = 0 %>
+                <% let totalPersonal = 0 %>
+                <% let totalShopping = 0 %>
+                <% let totalOther = 0 %>
+
+                <% let completedWork = 0 %>
+                <% let completedPersonal = 0 %>
+                <% let completedShopping = 0 %>
+                <% let completedOther = 0 %>
+
+                <% let total = 0; %>
+                <% let completed = 0; %>
+                <% for (let i of dashboard) { %>
+                    <% total++; %>
+                    <% if (i.completed == true) { %>
+                        <% completed++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "work") { %>
+                        <% totalWork++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "personal") { %>
+                        <% totalPersonal++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "shopping") { %>
+                        <% totalShopping++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "others") { %>
+                        <% totalOther++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "work" && i.completed == true) { %>
+                        <% completedWork++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "personal" && i.completed == true) { %>
+                        <% completedPersonal++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "shopping" && i.completed == true) { %>
+                        <% completedShopping++; %>
+                    <% } %>
+                    <% if (i.categoryChoosed == "others" && i.completed == true) { %>
+                        <% completedOther++; %>
+                    <% } %>
+                <% } %> 
+                <% let pending = total - completed; %>
+                        <div class="work-category">
+                            <ul type="none" class="category-ul">
+                                <div class="category-section" id="work-category">
+                                    <div class="category-section-left">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="">
+                                        <h5>Work</h5>
+                                    </div>
+                                    <div>
+                                        <span class="category-section-right"><%= totalWork %> Tasks</span>
+                                    </div>
+                                </div>
+                                <% for (let i of dashboard) { %>
+                                    <% if (i.categoryChoosed=="work") { %>
+                                        <li class="work-category-list">
+                                            <div class="list-main-section">
+                                                <div class="left-side-section" data-id="<%= i._id %>">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <%= i.task %>
+                                                        </div>
+                                                        <div>
+                                                            <%= i.description %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <%= i.date %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="complete-task-section">
+                                                    <a href="/complete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="list-buttom-section">
+                                                <div class="left-buttom-side-section">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <div>
+                                                                Task Created
+                                                            </div>
+                                                            <div>
+                                                                <%= i.currentDate %>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <!-- <%= i.date %> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="delete-task-section">
+                                                    <a href="/delete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <% } %>
+                                            <% } %>
+                            </ul>
+                        </div>
+                        <div class="personal-category">
+                            <ul type="none" class="category-ul">
+                                <div class="category-section" id="personal-category">
+                                    <div class="category-section-left">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="">
+                                    <h5>Personal</h5>
+                                    </div>
+                                    <div>
+                                        <span class="category-section-right"><%= totalPersonal %> Tasks</span>
+                                    </div>
+                                </div>
+                                <% for (let i of dashboard) { %>
+                                    <% if (i.categoryChoosed=="personal") { %>
+                                        <li class="personal-category-list">
+                                            <div class="list-main-section">
+                                                <div class="left-side-section">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <%= i.task %>
+                                                        </div>
+                                                        <div>
+                                                            <%= i.description %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <%= i.date %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="complete-task-section">
+                                                    <a href="/complete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="list-buttom-section">
+                                                <div class="left-buttom-side-section">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <div>
+                                                                Task Created
+                                                            </div>
+                                                            <div>
+                                                                <%= i.currentDate %>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <!-- <%= i.date %> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="delete-task-section">
+                                                    <a href="/delete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <% } %>
+                                            <% } %>
+                            </ul>
+                        </div>
+                        <div class="shopping-category">
+                            <ul type="none" class="category-ul">
+                                <div class="category-section" id="shopping-category">
+                                    <div class="category-section-left">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="">
+                                        <h5>Shopping</h5>
+                                    </div>
+                                    <div>
+                                        <span class="category-section-right"><%= totalShopping %> Tasks</span>
+                                    </div>
+                                </div>
+                                <% for (let i of dashboard) { %>
+                                    <% if (i.categoryChoosed=="shopping") { %>
+                                        <li class="shopping-category-list">
+                                            <div class="list-main-section">
+                                                <div class="left-side-section">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <%= i.task %>
+                                                        </div>
+                                                        <div>
+                                                            <%= i.description %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <%= i.date %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="complete-task-section">
+                                                    <a href="/complete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="list-buttom-section">
+                                                <div class="left-buttom-side-section">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <div>
+                                                                Task Created
+                                                            </div>
+                                                            <div>
+                                                                <%= i.currentDate %>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <!-- <%= i.date %> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="delete-task-section">
+                                                    <a href="/delete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <% } %>
+                                            <% } %>
+                            </ul>
+                        </div>
+                        <div class="other-category">
+                            <ul type="none" class="category-ul">
+                                <div class="category-section" id="other-category">
+                                    <div class="category-section-left">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/7245/7245102.png" alt="">
+                                        <h5>Others</h5>
+                                    </div>
+                                    <div>
+                                        <span class="category-section-right"><%= totalOther %> Tasks</span>
+                                    </div>
+                                </div>
+                                <% for (let i of dashboard) { %>
+                                    <% if (i.categoryChoosed=="others") { %>
+                                        <li class="others-category-list">
+                                            <div class="list-main-section">
+                                                <div class="left-side-section">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <%= i.task %>
+                                                        </div>
+                                                        <div>
+                                                            <%= i.description %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <%= i.date %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="complete-task-section">
+                                                    <a href="/complete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="list-buttom-section">
+                                                <div class="left-buttom-side-section">
+                                                    <div class="inner-left-side">
+                                                        <div>
+                                                            <div>
+                                                                Task Created
+                                                            </div>
+                                                            <div>
+                                                                <%= i.currentDate %>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <!-- <%= i.date %> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="delete-task-section">
+                                                    <a href="/delete-task/?id=<%= i._id %>"><img
+                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                            alt=""></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <% } %>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+        </div>
+        <div class="aside-section">
+            <div class="profile-section">
+                <div class="username-section">
+                    <div>Hello,</div>
+                    <div class="username">
+                        <%= name %>
+                    </div>
+                </div>
+                <div class="userimage"><img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="">
+                    <div class="colon">:</div>
+                </div>
+            </div>
+            <div class="profile-task-info-section">
+                <div class="profile-total-tasks-info">
+                    <div class="total-tasks-info-heading">
+                        <h5 class="info-heading">Total Tasks</h5>
+                        <h5 class="info"><span class="total-task-line">|</span> <%= total %></h5>
+                    </div>
+                </div>
+                <div class="profile-completed-tasks-info">
+                    <div class="completed-tasks-info-heading">
+                        <h5 class="info-heading">Completed Tasks</h5>
+                        <h5 class="info"><span class="completed-task-line">|</span> <%= completed %></h5>
+                    </div>
+                </div>
+                <div class="profile-pending-tasks-info">
+                    <div class="pending-tasks-info-heading">
+                        <h5 class="info-heading">Pending Tasks</h5>
+                        <h5 class="info"><span class="pending-task-line">|</span> <%= pending %></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- add task form -->
+
+    <div id="add-task-section">
+        <div class="close-add-task-section">
+            <img src="https://cdn-icons-png.flaticon.com/512/2976/2976286.png" alt="">
+        </div>
+        <form action="/addtask" method="post" id="add-task-form">
+            <div class="input-field">
+                <input type="text" name="task" placeholder="Enter Todos" class="input-task" required="required">
+                <textarea name="description" id="description" placeholder="Enter Description"></textarea>
+            </div>
+            <div class="category-heading">
+                <h5>Category</h5>
+            </div>
+            <div class="add-task-category-main-section">
+            <div class="add-task-category-section">
+                <div class="category" id="work" data-id="work">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="">
+                    <div>
+                        <span>Work</span>
+                    </div>
+                </div>
+                <div class="category" id="personal" data-id="personal">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="">
+                    <div>
+                        <span>Personal</span>
+                    </div>
+                </div>
+                <div class="category" id="shopping" data-id="shopping">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="">
+                    <div>
+                        <span>Shopping</span>
+                    </div>
+                </div>
+                <div class="category" id="others" data-id="others">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7245/7245102.png" alt="">
+                    <div>
+                        <span>Others</span>
+                    </div>
+                </div>
+                <input type="hidden" name="categoryChoosed" id="category-choosed">
+            </div>
+            </div>
+            <div class="date-time">
+                <input type="date" name="date" class="input-date">
+                <input type="time" name="time" class="input-time">
+            </div>
+            <button class="add-new-task">Add New Taks</button>
+        </form>
+    </div>
+
+    <footer>
+        <span>@ Developed By Ankit Vishwakarma</span>
+    </footer>
+
+    <script src="/js/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+
+</html>
