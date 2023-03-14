@@ -7,7 +7,6 @@ module.exports.dashboard = function(req, res){
     .then(function(data){
         User.findOne({email : "ankitvis609@gmail.com"})
         .then(function(user){
-            console.log(`**********user`, user.name);
         return res.render('dashboard', {
             title: "Dashboard",
             name: user.name,

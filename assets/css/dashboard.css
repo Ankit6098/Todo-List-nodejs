@@ -139,7 +139,7 @@ body {
     text-align: left;
 }
 
-.page-info h5 {
+.page1 h5 {
     font-size: 0.9rem;
     font-weight: 600;
     margin: 0px;
@@ -152,7 +152,6 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    cursor: pointer;
     margin: 20px;
 }
 
@@ -202,6 +201,7 @@ body {
     padding: 10px 20px;
     transition: all 0.5s ease-in-out;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .add-task-button:hover {
@@ -873,6 +873,176 @@ footer span {
 
 /* responsive */
 
-@media screen {
+@media screen and (max-width: 1500px) {
+
+    .main-container {
+        grid-template-columns: 0.8fr 3.8fr 1fr;
+    }
+
+    .leftside-nav-ul li {
+        font-size: 0.7rem;
+    }
+
+    .greeting-user-section h2 {
+        font-size: 1rem;
+    }
+
+    .greeting-user-section div {
+        font-size: 1.5rem;
+    }
+
+    .add-task-button {
+        width: 12vw;
+        font-size: 0.6rem;
+    }
+
+
+    /* task category section */
+
+    .category-section {
+       height: 2vh;
+    }
+
+    .category-section-left img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .category-section-left h5{
+        font-size: 0.8rem;
+    }
+
+    .category-section-right {
+        font-size: 0.5rem;
+    }
+
+    /* task list */
+
+    .work-category-list.show-work-category-list {
+        width: 23vw;
+        height: auto;
+        display: block;
+    }
+
+    .list-main-section {
+        width: 23vw;
+    }
+
+    .list-buttom-section {
+        width: 23vw;
+    }
+
+    .left-side-section {
+        padding: 15px 20px;
+    }
+
+    .left-buttom-side-section {
+        padding: 15px 20px;
+    }
+
+
+    /* task inner fonts */
+
+    .display-task {
+        font-size: 0.8rem;
+    }
     
+    .display-des {
+        font-size: 0.6rem;
+    }
+    
+    .right-side div {
+        font-size: 0.6rem;
+    }
+    
+    .display-currentdate {
+        font-size: 0.5rem;
+    }
+
+
+    /* profile section */
+
+    .aside-section {
+        padding: 20px;
+    }
+
+    .username-section {
+        font-size: 0.8rem;
+    }
+
+    .username {
+        font-size: 1rem;
+    }
+
+    .userimage img {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .profile-task-info-section {
+        gap: 0.5rem;
+        padding: 5px;
+    }
+
+    .total-tasks-info-heading {
+    }
+
+    .info {
+        font-size: 1.1rem;
+    }
+
+    /* add task form */
+
+    #add-task-section {
+        top: 10%;
+    }
+
+    #work img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #work span {
+        font-size: 0.8rem;
+    }
+
+    #personal img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #personal span {
+        font-size: 0.8rem;
+    }
+
+    #shopping img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #shopping span {
+        font-size: 0.8rem;
+    }
+
+    #others img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #others span {
+        font-size: 0.8rem;
+    }
+
+    .input-date {
+        font-size: 0.7rem;
+    }
+
+    .input-time {
+        font-size: 0.7rem;
+    }
+
+    .add-new-task {
+        width: 10vw;
+        font-size: 0.6rem;
+    }
 }
