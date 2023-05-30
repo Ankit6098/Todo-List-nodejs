@@ -10,7 +10,7 @@ body {
     background-color: #181a1b;
     overflow: hidden;
     letter-spacing: 1px;
-    
+
 }
 
 .nav-container {
@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: center;
     box-shadow: 0 -10px 20px -5px black,
-                -10px 0 20px -5px black;
+        -10px 0 20px -5px black;
 }
 
 .nav {
@@ -69,7 +69,7 @@ body {
 .nav-register {
     border: 1px solid grey;
     border-radius: 8px;
-    padding: 5px 18px ;
+    padding: 5px 18px;
     margin-left: 10px;
     transition: all 0.5s ease;
 }
@@ -84,7 +84,7 @@ body {
 
 .main-container {
     display: grid;
-    grid-template-columns: 0.5fr 3.8fr 0.9fr;
+    grid-template-columns: 0.7fr 3.8fr 0.9fr;
     padding: 0px;
 }
 
@@ -178,7 +178,7 @@ body {
     margin: 0px;
 }
 
-.greeting-user-section div{
+.greeting-user-section div {
     margin: 0px;
     font-size: 2rem;
     font-weight: 600;
@@ -212,7 +212,7 @@ body {
 
 /* category list section */
 
-.category-section{
+.category-section {
     width: 30vw;
     height: 3vh;
     padding: 20px 40px;
@@ -371,7 +371,7 @@ li:hover {
     width: 20vw;
     height: 0vh;
     display: flex;
-    justify-content: space-between;   
+    justify-content: space-between;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
 }
@@ -385,7 +385,7 @@ li:hover {
     display: flex;
 }
 
-.inner-left-side{
+.inner-left-side {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -478,7 +478,7 @@ li:hover {
     cursor: pointer;
 }
 
-.close-add-task-section img{
+.close-add-task-section img {
     width: 15px;
     height: 15px;
     filter: brightness(0) invert(1);
@@ -556,7 +556,7 @@ li:hover {
     display: none;
 }
 
-.category-heading  {
+.category-heading {
     width: 19vw;
 }
 
@@ -900,7 +900,7 @@ footer span {
     /* task category section */
 
     .category-section {
-       height: 2vh;
+        height: 2vh;
     }
 
     .category-section-left img {
@@ -908,7 +908,7 @@ footer span {
         height: 26px;
     }
 
-    .category-section-left h5{
+    .category-section-left h5 {
         font-size: 0.8rem;
     }
 
@@ -946,15 +946,15 @@ footer span {
     .display-task {
         font-size: 0.8rem;
     }
-    
+
     .display-des {
         font-size: 0.6rem;
     }
-    
+
     .right-side div {
         font-size: 0.6rem;
     }
-    
+
     .display-currentdate {
         font-size: 0.5rem;
     }
@@ -968,6 +968,7 @@ footer span {
 
     .username-section {
         font-size: 0.8rem;
+        font-weight: 600;
     }
 
     .username {
@@ -984,8 +985,7 @@ footer span {
         padding: 5px;
     }
 
-    .total-tasks-info-heading {
-    }
+    .total-tasks-info-heading {}
 
     .info {
         font-size: 1.1rem;

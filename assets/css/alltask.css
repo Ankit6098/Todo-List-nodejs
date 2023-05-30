@@ -88,7 +88,7 @@ body {
 
 .main-container {
     display: grid;
-    grid-template-columns: 0.5fr 3.8fr 0.9fr;
+    grid-template-columns: 0.7fr 3.8fr 0.9fr;
     padding: 0px;
 }
 

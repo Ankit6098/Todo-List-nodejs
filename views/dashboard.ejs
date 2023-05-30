@@ -5,7 +5,7 @@
         <%= title %>
     </title>
     <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/9802/9802618.png">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7692/7692809.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="iziToast.min.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="nav-container">
         <div class="nav">
             <div class="nav-logo-section">
-                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/9802/9802618.png" alt=""
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/7692/7692809.png" alt=""
                         class="nav-logo"></a>
                 <a href=""><span class="nav-logo-name">Todos.</span></a>
             </div>
@@ -63,326 +63,563 @@
                 </div>
             </div>
             <div class="bottom-section">
-                <% let totalWork = 0 %>
-                <% let totalPersonal = 0 %>
-                <% let totalShopping = 0 %>
-                <% let totalOther = 0 %>
+                <% let totalWork=0 %>
+                    <% let totalPersonal=0 %>
+                        <% let totalShopping=0 %>
+                            <% let totalOther=0 %>
 
-                <% let completedWork = 0 %>
-                <% let completedPersonal = 0 %>
-                <% let completedShopping = 0 %>
-                <% let completedOther = 0 %>
+                                <% let completedWork=0 %>
+                                    <% let completedPersonal=0 %>
+                                        <% let completedShopping=0 %>
+                                            <% let completedOther=0 %>
 
-                <% let total = 0; %>
-                <% let completed = 0; %>
-                <% for (let i of dashboard) { %>
-                    <% total++; %>
-                    <% if (i.completed == true) { %>
-                        <% completed++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "work") { %>
-                        <% totalWork++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "personal") { %>
-                        <% totalPersonal++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "shopping") { %>
-                        <% totalShopping++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "others") { %>
-                        <% totalOther++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "work" && i.completed == true) { %>
-                        <% completedWork++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "personal" && i.completed == true) { %>
-                        <% completedPersonal++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "shopping" && i.completed == true) { %>
-                        <% completedShopping++; %>
-                    <% } %>
-                    <% if (i.categoryChoosed == "others" && i.completed == true) { %>
-                        <% completedOther++; %>
-                    <% } %>
-                <% } %> 
-                <% let pendingWork = totalWork - completedWork; %>
-                <% let pendingPersonal = totalPersonal - completedPersonal; %>
-                <% let pendingShopping = totalShopping - completedShopping; %>
-                <% let pendingOther = totalOther - completedOther; %>
-                <% let pending = total - completed; %>
-                        <div class="work-category">
-                            <ul type="none" class="category-ul">
-                                <div class="category-section" id="work-category">
-                                    <div class="category-section-left">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="">
-                                        <h5>Work</h5>
-                                    </div>
-                                    <div>
-                                        <span class="category-section-right"><%= pendingWork %> Pending Tasks</span>
-                                    </div>
-                                </div>
-                                <% for (let i of dashboard) { %>
-                                    <% if (i.categoryChoosed=="work" && i.completed==false) { %>
-                                        <li class="work-category-list">
-                                            <div class="list-main-section">
-                                                <div class="left-side-section" data-id="<%= i._id %>">
-                                                    <div class="inner-left-side">
-                                                        <div class="display-task">
-                                                            <%= i.task %>
-                                                        </div>
-                                                        <div class="display-des">
-                                                            <%= i.description %>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <%= i.date %>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                            <div class="list-buttom-section">
-                                                <div class="left-buttom-side-section">
-                                                    <div class="inner-left-side">
-                                                        <div>
-                                                            <div>
-                                                                Task Created
-                                                            </div>
-                                                            <div class="display-currentdate">
-                                                                <%= i.currentDate %>
-                                                            </div>
-                                                        </div>
+                                                <% let total=0; %>
+                                                    <% let completed=0; %>
+                                                        <% for (let i of dashboard) { %>
+                                                            <% total++; %>
+                                                                <% if (i.completed==true) { %>
+                                                                    <% completed++; %>
+                                                                        <% } %>
+                                                                            <% if (i.categoryChoosed=="work" ) { %>
+                                                                                <% totalWork++; %>
+                                                                                    <% } %>
+                                                                                        <% if
+                                                                                            (i.categoryChoosed=="personal"
+                                                                                            ) { %>
+                                                                                            <% totalPersonal++; %>
+                                                                                                <% } %>
+                                                                                                    <% if
+                                                                                                        (i.categoryChoosed=="shopping"
+                                                                                                        ) { %>
+                                                                                                        <% totalShopping++;
+                                                                                                            %>
+                                                                                                            <% } %>
+                                                                                                                <% if
+                                                                                                                    (i.categoryChoosed=="others"
+                                                                                                                    ) {
+                                                                                                                    %>
+                                                                                                                    <% totalOther++;
+                                                                                                                        %>
+                                                                                                                        <% }
+                                                                                                                            %>
+                                                                                                                            <% if
+                                                                                                                                (i.categoryChoosed=="work"
+                                                                                                                                &&
+                                                                                                                                i.completed==true)
+                                                                                                                                {
+                                                                                                                                %>
+                                                                                                                                <% completedWork++;
+                                                                                                                                    %>
+                                                                                                                                    <% }
+                                                                                                                                        %>
+                                                                                                                                        <% if
+                                                                                                                                            (i.categoryChoosed=="personal"
+                                                                                                                                            &&
+                                                                                                                                            i.completed==true)
+                                                                                                                                            {
+                                                                                                                                            %>
+                                                                                                                                            <% completedPersonal++;
+                                                                                                                                                %>
+                                                                                                                                                <% }
+                                                                                                                                                    %>
+                                                                                                                                                    <% if
+                                                                                                                                                        (i.categoryChoosed=="shopping"
+                                                                                                                                                        &&
+                                                                                                                                                        i.completed==true)
+                                                                                                                                                        {
+                                                                                                                                                        %>
+                                                                                                                                                        <% completedShopping++;
+                                                                                                                                                            %>
+                                                                                                                                                            <% }
+                                                                                                                                                                %>
+                                                                                                                                                                <% if
+                                                                                                                                                                    (i.categoryChoosed=="others"
+                                                                                                                                                                    &&
+                                                                                                                                                                    i.completed==true)
+                                                                                                                                                                    {
+                                                                                                                                                                    %>
+                                                                                                                                                                    <% completedOther++;
+                                                                                                                                                                        %>
+                                                                                                                                                                        <% }
+                                                                                                                                                                            %>
+                                                                                                                                                                            <% }
+                                                                                                                                                                                %>
+                                                                                                                                                                                <% let
+                                                                                                                                                                                    pendingWork=totalWork
+                                                                                                                                                                                    -
+                                                                                                                                                                                    completedWork;
+                                                                                                                                                                                    %>
+                                                                                                                                                                                    <% let
+                                                                                                                                                                                        pendingPersonal=totalPersonal
+                                                                                                                                                                                        -
+                                                                                                                                                                                        completedPersonal;
+                                                                                                                                                                                        %>
+                                                                                                                                                                                        <% let
+                                                                                                                                                                                            pendingShopping=totalShopping
+                                                                                                                                                                                            -
+                                                                                                                                                                                            completedShopping;
+                                                                                                                                                                                            %>
+                                                                                                                                                                                            <% let
+                                                                                                                                                                                                pendingOther=totalOther
+                                                                                                                                                                                                -
+                                                                                                                                                                                                completedOther;
+                                                                                                                                                                                                %>
+                                                                                                                                                                                                <% let
+                                                                                                                                                                                                    pending=total
+                                                                                                                                                                                                    -
+                                                                                                                                                                                                    completed;
+                                                                                                                                                                                                    %>
+                                                                                                                                                                                                    <div
+                                                                                                                                                                                                        class="work-category">
+                                                                                                                                                                                                        <ul type="none"
+                                                                                                                                                                                                            class="category-ul">
+                                                                                                                                                                                                            <div class="category-section"
+                                                                                                                                                                                                                id="work-category">
+                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                    class="category-section-left">
+                                                                                                                                                                                                                    <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png"
+                                                                                                                                                                                                                        alt="">
+                                                                                                                                                                                                                    <h5>Work
+                                                                                                                                                                                                                    </h5>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                    <span
+                                                                                                                                                                                                                        class="category-section-right">
+                                                                                                                                                                                                                        <%= pendingWork
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                            Pending
+                                                                                                                                                                                                                            Tasks
+                                                                                                                                                                                                                    </span>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                            <% for
+                                                                                                                                                                                                                (let
+                                                                                                                                                                                                                i
+                                                                                                                                                                                                                of
+                                                                                                                                                                                                                dashboard)
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                <% if
+                                                                                                                                                                                                                    (i.categoryChoosed=="work"
+                                                                                                                                                                                                                    &&
+                                                                                                                                                                                                                    i.completed==false)
+                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                    %>
+                                                                                                                                                                                                                    <li
+                                                                                                                                                                                                                        class="work-category-list">
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-main-section">
+                                                                                                                                                                                                                            <div class="left-side-section"
+                                                                                                                                                                                                                                data-id="<%= i._id %>">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-task">
+                                                                                                                                                                                                                                        <%= i.task
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-des">
+                                                                                                                                                                                                                                        <%= i.description
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <%= i.date
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="complete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/complete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-buttom-section">
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="left-buttom-side-section">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                            Task
+                                                                                                                                                                                                                                            Created
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                                            class="display-currentdate">
+                                                                                                                                                                                                                                            <%= i.currentDate
+                                                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                    </div>
 
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <!-- <%= i.date %> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="delete-task-section">
-                                                    <a href="/delete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                                            <% } %>
-                            </ul>
-                        </div>
-                        <div class="personal-category">
-                            <ul type="none" class="category-ul">
-                                <div class="category-section" id="personal-category">
-                                    <div class="category-section-left">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="">
-                                    <h5>Personal</h5>
-                                    </div>
-                                    <div>
-                                        <span class="category-section-right"><%= pendingPersonal %> Pending Tasks</span>
-                                    </div>
-                                </div>
-                                <% for (let i of dashboard) { %>
-                                    <% if (i.categoryChoosed=="personal" && i.completed==false) { %>
-                                        <li class="personal-category-list">
-                                            <div class="list-main-section">
-                                                <div class="left-side-section">
-                                                    <div class="inner-left-side">
-                                                        <div class="display-task">
-                                                            <%= i.task %>
-                                                        </div>
-                                                        <div class="display-des">
-                                                            <%= i.description %>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <%= i.date %>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                            <div class="list-buttom-section">
-                                                <div class="left-buttom-side-section">
-                                                    <div class="inner-left-side">
-                                                        <div>
-                                                            <div>
-                                                                Task Created
-                                                            </div>
-                                                            <div>
-                                                                <%= i.currentDate %>
-                                                            </div>
-                                                        </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <!-- <%= i.date %> -->
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="delete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/delete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                    <% }
+                                                                                                                                                                                                                        %>
+                                                                                                                                                                                                                        <% }
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                    <div
+                                                                                                                                                                                                        class="personal-category">
+                                                                                                                                                                                                        <ul type="none"
+                                                                                                                                                                                                            class="category-ul">
+                                                                                                                                                                                                            <div class="category-section"
+                                                                                                                                                                                                                id="personal-category">
+                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                    class="category-section-left">
+                                                                                                                                                                                                                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+                                                                                                                                                                                                                        alt="">
+                                                                                                                                                                                                                    <h5>Personal
+                                                                                                                                                                                                                    </h5>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                    <span
+                                                                                                                                                                                                                        class="category-section-right">
+                                                                                                                                                                                                                        <%= pendingPersonal
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                            Pending
+                                                                                                                                                                                                                            Tasks
+                                                                                                                                                                                                                    </span>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                            <% for
+                                                                                                                                                                                                                (let
+                                                                                                                                                                                                                i
+                                                                                                                                                                                                                of
+                                                                                                                                                                                                                dashboard)
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                <% if
+                                                                                                                                                                                                                    (i.categoryChoosed=="personal"
+                                                                                                                                                                                                                    &&
+                                                                                                                                                                                                                    i.completed==false)
+                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                    %>
+                                                                                                                                                                                                                    <li
+                                                                                                                                                                                                                        class="personal-category-list">
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-main-section">
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="left-side-section">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-task">
+                                                                                                                                                                                                                                        <%= i.task
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-des">
+                                                                                                                                                                                                                                        <%= i.description
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <%= i.date
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="complete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/complete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-buttom-section">
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="left-buttom-side-section">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                            Task
+                                                                                                                                                                                                                                            Created
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                            <%= i.currentDate
+                                                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                    </div>
 
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <!-- <%= i.date %> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="delete-task-section">
-                                                    <a href="/delete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                                            <% } %>
-                            </ul>
-                        </div>
-                        <div class="shopping-category">
-                            <ul type="none" class="category-ul">
-                                <div class="category-section" id="shopping-category">
-                                    <div class="category-section-left">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="">
-                                        <h5>Shopping</h5>
-                                    </div>
-                                    <div>
-                                        <span class="category-section-right"><%= pendingShopping %> Pending Tasks</span>
-                                    </div>
-                                </div>
-                                <% for (let i of dashboard) { %>
-                                    <% if (i.categoryChoosed=="shopping" && i.completed==false) { %>
-                                        <li class="shopping-category-list">
-                                            <div class="list-main-section">
-                                                <div class="left-side-section">
-                                                    <div class="inner-left-side">
-                                                        <div class="display-task">
-                                                            <%= i.task %>
-                                                        </div>
-                                                        <div class="display-des">
-                                                            <%= i.description %>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <%= i.date %>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                            <div class="list-buttom-section">
-                                                <div class="left-buttom-side-section">
-                                                    <div class="inner-left-side">
-                                                        <div>
-                                                            <div>
-                                                                Task Created
-                                                            </div>
-                                                            <div>
-                                                                <%= i.currentDate %>
-                                                            </div>
-                                                        </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <!-- <%= i.date %> -->
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="delete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/delete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                    <% }
+                                                                                                                                                                                                                        %>
+                                                                                                                                                                                                                        <% }
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                    <div
+                                                                                                                                                                                                        class="shopping-category">
+                                                                                                                                                                                                        <ul type="none"
+                                                                                                                                                                                                            class="category-ul">
+                                                                                                                                                                                                            <div class="category-section"
+                                                                                                                                                                                                                id="shopping-category">
+                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                    class="category-section-left">
+                                                                                                                                                                                                                    <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png"
+                                                                                                                                                                                                                        alt="">
+                                                                                                                                                                                                                    <h5>Shopping
+                                                                                                                                                                                                                    </h5>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                    <span
+                                                                                                                                                                                                                        class="category-section-right">
+                                                                                                                                                                                                                        <%= pendingShopping
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                            Pending
+                                                                                                                                                                                                                            Tasks
+                                                                                                                                                                                                                    </span>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                            <% for
+                                                                                                                                                                                                                (let
+                                                                                                                                                                                                                i
+                                                                                                                                                                                                                of
+                                                                                                                                                                                                                dashboard)
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                <% if
+                                                                                                                                                                                                                    (i.categoryChoosed=="shopping"
+                                                                                                                                                                                                                    &&
+                                                                                                                                                                                                                    i.completed==false)
+                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                    %>
+                                                                                                                                                                                                                    <li
+                                                                                                                                                                                                                        class="shopping-category-list">
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-main-section">
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="left-side-section">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-task">
+                                                                                                                                                                                                                                        <%= i.task
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-des">
+                                                                                                                                                                                                                                        <%= i.description
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <%= i.date
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="complete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/complete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-buttom-section">
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="left-buttom-side-section">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                            Task
+                                                                                                                                                                                                                                            Created
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                            <%= i.currentDate
+                                                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                    </div>
 
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <!-- <%= i.date %> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="delete-task-section">
-                                                    <a href="/delete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                                            <% } %>
-                            </ul>
-                        </div>
-                        <div class="other-category">
-                            <ul type="none" class="category-ul">
-                                <div class="category-section" id="other-category">
-                                    <div class="category-section-left">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/7245/7245102.png" alt="">
-                                        <h5>Others</h5>
-                                    </div>
-                                    <div>
-                                        <span class="category-section-right"><%= pendingOther %> Pending Tasks</span>
-                                    </div>
-                                </div>
-                                <% for (let i of dashboard) { %>
-                                    <% if (i.categoryChoosed=="others" && i.completed==false) { %>
-                                        <li class="others-category-list">
-                                            <div class="list-main-section">
-                                                <div class="left-side-section">
-                                                    <div class="inner-left-side">
-                                                        <div class="display-task">
-                                                            <%= i.task %>
-                                                        </div>
-                                                        <div class="display-des">
-                                                            <%= i.description %>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <%= i.date %>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="complete-task-section">
-                                                    <a href="/complete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                            <div class="list-buttom-section">
-                                                <div class="left-buttom-side-section">
-                                                    <div class="inner-left-side">
-                                                        <div>
-                                                            <div>
-                                                                Task Created
-                                                            </div>
-                                                            <div>
-                                                                <%= i.currentDate %>
-                                                            </div>
-                                                        </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <!-- <%= i.date %> -->
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="delete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/delete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                    <% }
+                                                                                                                                                                                                                        %>
+                                                                                                                                                                                                                        <% }
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                    <div
+                                                                                                                                                                                                        class="other-category">
+                                                                                                                                                                                                        <ul type="none"
+                                                                                                                                                                                                            class="category-ul">
+                                                                                                                                                                                                            <div class="category-section"
+                                                                                                                                                                                                                id="other-category">
+                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                    class="category-section-left">
+                                                                                                                                                                                                                    <img src="https://cdn-icons-png.flaticon.com/512/7245/7245102.png"
+                                                                                                                                                                                                                        alt="">
+                                                                                                                                                                                                                    <h5>Others
+                                                                                                                                                                                                                    </h5>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                    <span
+                                                                                                                                                                                                                        class="category-section-right">
+                                                                                                                                                                                                                        <%= pendingOther
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                            Pending
+                                                                                                                                                                                                                            Tasks
+                                                                                                                                                                                                                    </span>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                            <% for
+                                                                                                                                                                                                                (let
+                                                                                                                                                                                                                i
+                                                                                                                                                                                                                of
+                                                                                                                                                                                                                dashboard)
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                <% if
+                                                                                                                                                                                                                    (i.categoryChoosed=="others"
+                                                                                                                                                                                                                    &&
+                                                                                                                                                                                                                    i.completed==false)
+                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                    %>
+                                                                                                                                                                                                                    <li
+                                                                                                                                                                                                                        class="others-category-list">
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-main-section">
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="left-side-section">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-task">
+                                                                                                                                                                                                                                        <%= i.task
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div
+                                                                                                                                                                                                                                        class="display-des">
+                                                                                                                                                                                                                                        <%= i.description
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <%= i.date
+                                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="complete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/complete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        <div
+                                                                                                                                                                                                                            class="list-buttom-section">
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="left-buttom-side-section">
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="inner-left-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                            Task
+                                                                                                                                                                                                                                            Created
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div>
+                                                                                                                                                                                                                                            <%= i.currentDate
+                                                                                                                                                                                                                                                %>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                    </div>
 
-                                                    </div>
-                                                    <div class="right-side">
-                                                        <div>
-                                                            <!-- <%= i.date %> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="delete-task-section">
-                                                    <a href="/delete-task/?id=<%= i._id %>"><img
-                                                            src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
-                                                            alt=""></a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    <% } %>
-                                <% } %>
-                            </ul>
-                        </div>
-                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div
+                                                                                                                                                                                                                                    class="right-side">
+                                                                                                                                                                                                                                    <div>
+                                                                                                                                                                                                                                        <!-- <%= i.date %> -->
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div
+                                                                                                                                                                                                                                class="delete-task-section">
+                                                                                                                                                                                                                                <a
+                                                                                                                                                                                                                                    href="/delete-task/?id=<%= i._id %>"><img
+                                                                                                                                                                                                                                        src="https://cdn-icons-png.flaticon.com/512/6460/6460112.png"
+                                                                                                                                                                                                                                        alt=""></a>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                    <% }
+                                                                                                                                                                                                                        %>
+                                                                                                                                                                                                                        <% }
+                                                                                                                                                                                                                            %>
+                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                    </div>
+            </div>
         </div>
         <div class="aside-section">
             <div class="profile-section">
                 <div class="username-section">
                     <div>Hello,</div>
-                    <div class="username">
-                        <%= name %>
-                    </div>
                 </div>
                 <div class="userimage"><img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="">
                     <div class="colon">:</div>
@@ -392,19 +629,25 @@
                 <div class="profile-total-tasks-info">
                     <div class="total-tasks-info-heading">
                         <h5 class="info-heading">Total Tasks</h5>
-                        <h5 class="info"><span class="total-task-line">|</span> <%= total %></h5>
+                        <h5 class="info"><span class="total-task-line">|</span>
+                            <%= total %>
+                        </h5>
                     </div>
                 </div>
                 <div class="profile-completed-tasks-info">
                     <div class="completed-tasks-info-heading">
                         <h5 class="info-heading">Completed Tasks</h5>
-                        <h5 class="info"><span class="completed-task-line">|</span> <%= completed %></h5>
+                        <h5 class="info"><span class="completed-task-line">|</span>
+                            <%= completed %>
+                        </h5>
                     </div>
                 </div>
                 <div class="profile-pending-tasks-info">
                     <div class="pending-tasks-info-heading">
                         <h5 class="info-heading">Pending Tasks</h5>
-                        <h5 class="info"><span class="pending-task-line">|</span> <%= pending %></h5>
+                        <h5 class="info"><span class="pending-task-line">|</span>
+                            <%= pending %>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -427,33 +670,33 @@
                 <h5>Category</h5>
             </div>
             <div class="add-task-category-main-section">
-            <div class="add-task-category-section">
-                <div class="category" id="work" data-id="work">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="">
-                    <div>
-                        <span>Work</span>
+                <div class="add-task-category-section">
+                    <div class="category" id="work" data-id="work">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="">
+                        <div>
+                            <span>Work</span>
+                        </div>
                     </div>
-                </div>
-                <div class="category" id="personal" data-id="personal">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="">
-                    <div>
-                        <span>Personal</span>
+                    <div class="category" id="personal" data-id="personal">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="">
+                        <div>
+                            <span>Personal</span>
+                        </div>
                     </div>
-                </div>
-                <div class="category" id="shopping" data-id="shopping">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="">
-                    <div>
-                        <span>Shopping</span>
+                    <div class="category" id="shopping" data-id="shopping">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" alt="">
+                        <div>
+                            <span>Shopping</span>
+                        </div>
                     </div>
-                </div>
-                <div class="category" id="others" data-id="others">
-                    <img src="https://cdn-icons-png.flaticon.com/512/7245/7245102.png" alt="">
-                    <div>
-                        <span>Others</span>
+                    <div class="category" id="others" data-id="others">
+                        <img src="https://cdn-icons-png.flaticon.com/512/7245/7245102.png" alt="">
+                        <div>
+                            <span>Others</span>
+                        </div>
                     </div>
+                    <input type="hidden" name="categoryChoosed" id="category-choosed">
                 </div>
-                <input type="hidden" name="categoryChoosed" id="category-choosed">
-            </div>
             </div>
             <div class="date-time">
                 <input type="date" name="date" class="input-date">
@@ -466,7 +709,6 @@
     <footer>
         <span>@ Developed By Ankit Vishwakarma</span>
     </footer>
-
 
 
     <script src="/js/dashboard.js"></script>
