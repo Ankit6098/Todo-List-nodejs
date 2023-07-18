@@ -9,7 +9,7 @@ module.exports.dashboard = function(req, res){
         .then(function(user){
         return res.render('dashboard', {
             title: "Dashboard",
-            name: user.name,
+            // name: user.name,
             dashboard: data
         });
     })
